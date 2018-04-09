@@ -1,0 +1,17 @@
+--- 
+layout: default 
+---
+
+{%- if site.posts.size > 0 -%}
+    {%- for post in site.posts -%}
+        <section>
+            <h3>
+                <a href=href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            </h3>
+            <blockquote>
+                {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+            </blockquote>
+            <button class="btn btn-default btn-sm btn-publicacion-completa" type="button" onclick="location.href='{{ post.url | relative_url }}'">Publicación completa...</button>
+        </section>
+    {%- endfor -%}
+{%- endif -%}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " es " }}">
+
+{%- include head.html -%}
+
+<body>
+
+    {%- include header.html -%}
+
+    <div id="contenido">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="jumbotron">
+                        <h1>GULAG</h1>
+                        <p>Grupo de Usuarios de GNU/Linux de la Laguna.</p>
+                    </div>
+                    <header>
+                        <h1>{{ page.list_title | default: "Inicio" }}</h1>
+                    </header>
+                    {{ content }} {%- include pagination.html -%}
+                </div>
+                <div class="col-md-3">
+                    <aside>
+                        {%- include categorias.html -%} {%- include autores.html -%} {%- include ultimas_publicaciones.html -%}
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {%- include footer.html -%}
+
+</body>
+
+</html>
